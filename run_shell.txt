@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define filenames
-SOURCE_FILE="simple_shell.c"
+SOURCE_FILE="exec.c"
 OUTPUT_BIN="myshell"
 
 echo "--- Compiling $SOURCE_FILE ---"
@@ -23,4 +23,5 @@ if [ $? -eq 0 ]; then
     # rm $OUTPUT_BIN
 else
     echo "!!! Compilation Failed !!!"
+
 fi
