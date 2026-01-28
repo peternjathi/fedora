@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Define filenames
+SOURCE_FILE="simple_shell.c"
+OUTPUT_BIN="myshell"
+
+echo "--- Compiling $SOURCE_FILE ---"
+
+# Compile the C code
+gcc -o $OUTPUT_BIN $SOURCE_FILE
+
+# Check if compilation was successful
+if [ $? -eq 0 ]; then
+    echo "--- Compilation Successful. Running Shell... ---"
+    echo "    (Type 'ls' or 'ls > file.txt' to test)"
+    echo "    (Press Ctrl+D to exit)"
+    echo "----------------------------------------------"
+    
+    # Run the shell
+    ./$OUTPUT_BIN
+    
+    # Optional: cleanup binary after running
+    # rm $OUTPUT_BIN
+else
+    echo "!!! Compilation Failed !!!"
+fi
